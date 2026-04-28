@@ -10,6 +10,11 @@ const IterationSample = () => {
   const [inputText, setInputText] = useState('');
   const [nextId, setNextId] = useState(5);
 
+  // 복구 기능 구현
+  // 순서1
+  // 삭제할 요소를 따로 저장할 state 만들기.
+  const [deletedItems, setDeletedItems] = useState([]);
+
   const onChange = (e) => setInputText(e.target.value);
 
   // 추가 작업 : C
@@ -43,8 +48,34 @@ const IterationSample = () => {
     // { id: 3, text: '눈' },
     // { id: 4, text: '바람' },
     // ]
-    const nextNames = names.filter((name) => name.id !== id);
-    setNames(nextNames);
+
+    // 복구 기능 구현
+    // 순서2
+    // 삭제할 요소를 선택하면, 이요소를 찾아서, 1) 원래대로 삭제
+    // 2) 삭제할 요소를 담을 배열에 넣기
+    const removedItem = names.find((name) => name.id === id);
+
+    // 삭제할 요소를 삭제할지 여부를 컨펌 확인 후, 삭제도 진행하고, 삭제된 요소를 가지는 배열에 추가.
+    if (confirm(`${removedItem.text}를 삭제하시겠습니까?`)) {
+      // 삭제하기전에, deletedItems 배열에 담기.
+      setDeletedItems([...deletedItems, removedItem]);
+      // 원래대로 삭제기능,
+      const nextNames = names.filter((name) => name.id !== id);
+      setNames(nextNames);
+      alert(`삭제한 요소는 :  ${id}`);
+    }
+  };
+
+  // 복구 기능 구현
+  // 순서3
+  // 삭제 한 요소를 가지는 배열, 출력하는 배열로 옮기기 작업.
+  const restoreItem = (id) => {
+    // 삭제한 요소를 가지는 배열에서, 복구할 요소를 찾고
+    const restoredItem = deletedItems.find((item) => item.id === id);
+    // 출력할 배열에, 복구할 요소를 추가 작업.
+    setNames([...names, restoredItem]);
+    // 기존 삭제 요소를 가지는 배열에서, 제거해야함.
+    setDeletedItems(deletedItems.filter((item) => item.id !== id));
   };
 
   // 수정하기. U,
@@ -89,6 +120,19 @@ const IterationSample = () => {
       />
       <button onClick={onClick}>추가</button>
       <ul>{namesList}</ul>
+      {/* // 복구 기능 구현
+        // 순서3 */}
+      <h2>삭제한 요소 목록 출력</h2>
+      {deletedItems.length > 0 && (
+        <ul>
+          {deletedItems.map((item) => (
+            <li key={item.id}>
+              {item.text}
+              <button onClick={() => restoreItem(item.id)}>복구</button>
+            </li>
+          ))}
+        </ul>
+      )}
     </>
   );
 };
