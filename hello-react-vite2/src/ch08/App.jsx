@@ -8,6 +8,7 @@ import Ex4 from './Ex4';
 import Counter2 from './Counter2';
 import Ex5 from './Ex5';
 import Ex6 from './Ex6';
+import Average from './Average';
 
 const App = () => {
   //Ex4 에서, 언마운트 효과 내기를 위한 상태 추가.
@@ -73,6 +74,11 @@ const App = () => {
         추가하고, REMOVE action으로 항목을 삭제하세요.
       </p>
       <Ex6></Ex6>
+
+      <br />
+      <h2>useMemo 기본 예시 연습</h2>
+      <Average></Average>
+      <br />
     </div>
   );
 };
