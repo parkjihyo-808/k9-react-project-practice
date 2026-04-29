@@ -50,6 +50,17 @@ function reducer(state, action) {
             : name,
         ),
       };
+
+    case 'RESTORE_ITEM':
+      return {
+        ...state,
+        // 휴지통에서 꺼내서 , 기존 배열에 복구
+        names: [...state.names, action.payload],
+        // 휴지통 배열에서는 해당 항목 제거. (왜? 이동 했으니. )
+        deletedItems: state.deletedItems.filter(
+          (name) => name.id !== action.payload.id,
+        ),
+      };
   }
 }
 
@@ -98,6 +109,13 @@ const Ex6 = () => {
     }
   };
 
+  // 복구 작업 :
+  const restoreItem = (id) => {
+    // 삭제한 요소를 가지는 배열에서, 복구할 요소를 찾고
+    const restoredItem = deletedItems.find((item) => item.id === id);
+    dispatch({ type: 'RESTORE_ITEM', payload: restoredItem });
+  };
+
   // 추가 이벤트 핸들러 더 있음. 추가 할 예정.
 
   //6. 출력용 배열 , names 를 그리기 작업 : 6장 컴포넌트 반복, 내장 함수, map 이용했음.
@@ -134,7 +152,7 @@ const Ex6 = () => {
           {deletedItems.map((item) => (
             <li key={item.id}>
               {item.text}
-              {/* <button onClick={() => restoreItem(item.id)}>복구</button> */}
+              <button onClick={() => restoreItem(item.id)}>복구</button>
             </li>
           ))}
         </ul>
