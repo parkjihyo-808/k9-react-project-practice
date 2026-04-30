@@ -11,7 +11,7 @@ const Ex10 = () => {
   // 의존성 배열을 생략시, 매번 콜백함수가 실행이 됩니다.
   useEffect(() => {
     renderCount.current += 1;
-    console.log(`렌더링 회수 : ${renderCount}회`);
+    console.log(`렌더링 횟수 : ${renderCount.current}회`);
   });
 
   return (
