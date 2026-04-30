@@ -10,6 +10,7 @@ import Ex5 from './Ex5';
 import Ex6 from './Ex6';
 import Average from './Average';
 import Ex7 from './Ex7';
+import Average2 from './Average2';
 
 const App = () => {
   //Ex4 에서, 언마운트 효과 내기를 위한 상태 추가.
@@ -87,8 +88,11 @@ const App = () => {
         추가할 때만 최댓값이 재계산되어야 합니다.
       </p>
       <Ex7></Ex7>
-
       <br />
+      <h2>useCallback 기본 예시 연습</h2>
+      <Average2></Average2>
+      <br />
+      <hr />
     </div>
   );
 };
