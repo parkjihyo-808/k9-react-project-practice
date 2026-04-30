@@ -13,6 +13,7 @@ import Ex7 from './Ex7';
 import Average2 from './Average2';
 import Ex8 from './Ex8';
 import Average3 from './Average3';
+import Ex9 from './Ex9';
 
 const App = () => {
   //Ex4 에서, 언마운트 효과 내기를 위한 상태 추가.
@@ -109,6 +110,13 @@ const App = () => {
       <br />
       <hr />
       <hr />
+      <h3>실습9 </h3>
+      <p>
+        텍스트를 입력하고 "확인" 버튼을 누르면 alert으로 보여주고, input에
+        자동으로 포커스가 되돌아오는 컴포넌트를 만드세요. Average3 ,참고
+      </p>
+      <Ex9></Ex9>
+      <br />
     </div>
   );
 };
