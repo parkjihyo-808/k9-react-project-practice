@@ -4,6 +4,7 @@ import Ex1 from './Ex1';
 import Ex2 from './Ex2';
 import Ex3 from './Ex3';
 import Ex4 from './Ex4';
+import ModuleCss from './ModuleCss';
 import SassComponent from './SassComponent';
 import SassEx1 from './SassEx1';
 
@@ -65,6 +66,10 @@ const App = () => (
       항목(.active)은 밑줄이 표시되고, :hover 시 색이 변해야 합니다.
     </p>
     <Ex4></Ex4>
+
+    <h2>CSSModule.css 예제</h2>
+    <p>CSSModule 를 이용한 자동 클래스명 생성 예시</p>
+    <ModuleCss></ModuleCss>
   </div>
 );
 
