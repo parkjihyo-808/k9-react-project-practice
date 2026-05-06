@@ -8,6 +8,7 @@ import Ex4 from './Ex4';
 import Ex5 from './Ex5';
 import Ex6 from './Ex6';
 import Ex7 from './Ex7';
+import Ex8 from './Ex8';
 import ModuleCss from './ModuleCss';
 import SassComponent from './SassComponent';
 import SassEx1 from './SassEx1';
@@ -114,6 +115,21 @@ const App = () => (
       error
       errorMessage="올바른 형식이 아닙니다."
     ></Ex7>
+    <h2>실습8</h2>
+    <p>
+      문제 4-2 : styled-components를 사용하여 Card 컴포넌트를 만드세요. variant
+      prop으로 'primary'와 'secondary' 두 가지 스타일을 지원해야 합니다.
+    </p>
+    <Ex8
+      variant="primary"
+      title="기본 카드 "
+      content="파란색 계열 테마의 카드."
+    ></Ex8>
+    <Ex8
+      variant="secondary"
+      title="보조 카드 "
+      content="보라색 계열 테마의 카드."
+    ></Ex8>
   </div>
 );
 
