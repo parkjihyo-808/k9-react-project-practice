@@ -7,9 +7,11 @@ import Ex3 from './Ex3';
 import Ex4 from './Ex4';
 import Ex5 from './Ex5';
 import Ex6 from './Ex6';
+import Ex7 from './Ex7';
 import ModuleCss from './ModuleCss';
 import SassComponent from './SassComponent';
 import SassEx1 from './SassEx1';
+import StyledComponent from './StyledComponent';
 
 const App = () => (
   <div className="App">
@@ -98,6 +100,20 @@ const App = () => (
       만드세요. 클릭하면 활성/비활성 상태가 전환되고 스타일이 바뀌어야 합니다.
     </p>
     <Ex6></Ex6>
+    <h2>styled-components 예제</h2>
+    <p>js 안에서 css 를 조건을주고, props 속성에 따른 컴포넌트 조건부 렌더링</p>
+    <StyledComponent></StyledComponent>
+    <h2>실습7</h2>
+    <p>
+      문제 4-1 : styled-components로 Input 컴포넌트를 만드세요. error prop이
+      true일 때 테두리가 빨간색으로 바뀌어야 합니다.
+    </p>
+    <Ex7 placeholder="이름을 입력하세요"></Ex7>
+    <Ex7
+      placeholder="이메일을 입력하세요"
+      error
+      errorMessage="올바른 형식이 아닙니다."
+    ></Ex7>
   </div>
 );
 
