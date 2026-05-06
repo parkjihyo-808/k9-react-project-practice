@@ -24,7 +24,7 @@ const Input = styled.input`
 `;
 
 const ErrorMessage = styled.p`
-  color: #e92213
+  color: #e92213;
   font-size: 0.8rem;
   margin-top: 0.3rem;
 `;
