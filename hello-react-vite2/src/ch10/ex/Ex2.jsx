@@ -1,8 +1,11 @@
 // src/components/TodoList.js
 import TodoListItem from './TodoListItem';
-import './TodoList.scss';
+import '../components/TodoList.scss';
 
-const TodoList = ({ todos, onRemove, onToggle }) => (
+// 문제 2-2 : TodoList에서 todos가 비어 있을 때
+// "할 일이 없습니다! 🎉" 메시지를 표시하도록 수정해 보세요.
+
+const Ex2 = ({ todos, onRemove, onToggle }) => (
   <div className="TodoList">
     {todos.length === 0 ? (
       <p style={{ textAlign: 'center', padding: '2rem', color: 'red' }}>
@@ -21,4 +24,4 @@ const TodoList = ({ todos, onRemove, onToggle }) => (
   </div>
 );
 
-export default TodoList;
+export default Ex2;

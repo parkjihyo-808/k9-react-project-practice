@@ -1,6 +1,7 @@
 // src/components/TodoInsert.js
 import { useState, useCallback } from 'react';
 import { MdAdd } from 'react-icons/md';
+import { AiFillEdit } from 'react-icons/ai';
 import './TodoInsert.scss';
 
 const TodoInsert = ({ onInsert }) => {
@@ -32,7 +33,8 @@ const TodoInsert = ({ onInsert }) => {
         onChange={onChange}
       />
       <button type="submit">
-        <MdAdd />
+        {/* <MdAdd /> */}
+        <AiFillEdit />
       </button>
     </form>
   );

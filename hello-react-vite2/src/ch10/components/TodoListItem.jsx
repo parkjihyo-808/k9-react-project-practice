@@ -4,6 +4,7 @@ import {
   MdCheckBox, // 체크 아이콘 ☑
   MdRemoveCircleOutline, // 삭제 아이콘 ⊖
 } from 'react-icons/md';
+import { AiFillDelete } from 'react-icons/ai';
 import cn from 'classnames';
 import './TodoListItem.scss';
 
@@ -23,7 +24,8 @@ const TodoListItem = ({ todo, onRemove, onToggle }) => {
 
       {/* 삭제 버튼: 클릭 시 삭제 */}
       <div className="remove" onClick={() => onRemove(id)}>
-        <MdRemoveCircleOutline />
+        {/* <MdRemoveCircleOutline /> */}
+        <AiFillDelete />
       </div>
     </div>
   );

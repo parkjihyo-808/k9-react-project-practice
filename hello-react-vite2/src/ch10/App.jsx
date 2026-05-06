@@ -18,6 +18,12 @@ const App = () => {
   // ── 할 일 추가 ─────────────────────────────────────────
   // concat: 기존 배열은 그대로 두고 새 배열을 반환 (불변성 유지)
   const onInsert = useCallback((text) => {
+    // 빈문자열이면, onInsert 함수 기능을 나간다.
+    if (!text.trim()) {
+      alert('빈 문자열은 입력 불가입니다.');
+      return;
+    }
+
     const todo = {
       id: nextId.current,
       text,
