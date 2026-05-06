@@ -4,7 +4,13 @@ import TodoTemplate from './components/TodoTemplate';
 import TodoInsert from './components/TodoInsert';
 import TodoList from './components/TodoList';
 
-const App = () => {
+// **문제 3-3** : 완료된 할 일 개수와 전체 할 일 개수를
+// 타이틀 아래에 표시해 보세요. 예: `"완료 2 / 전체 3"`
+
+// **힌트**: `App.js`에서 `useMemo`로 계산하고
+// `TodoTemplate`에 prop으로 전달하세요.
+
+const Ex5 = () => {
   // ── 상태 선언 ──────────────────────────────────────────
   const [todos, setTodos] = useState([
     { id: 1, text: '리액트의 기초 알아보기', checked: true },
@@ -70,4 +76,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Ex5;
