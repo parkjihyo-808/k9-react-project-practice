@@ -5,6 +5,7 @@ import {
   MdRemoveCircleOutline, // 삭제 아이콘 ⊖
 } from 'react-icons/md';
 import { AiFillDelete, AiFillEdit } from 'react-icons/ai';
+import { MdOutlineCancel } from 'react-icons/md';
 
 import cn from 'classnames';
 import './TodoListItem.scss';
@@ -55,14 +56,28 @@ const TodoListItem = ({ todo, onRemove, onToggle, onUpdate }) => {
   // 조건부 렌더링 */}
       {isEditing ? (
         // 수정 입력창
-        <>
-          <input
-            value={editText}
-            onChange={(e) => setEditText(e.target.value)}
-          />
-          <button onClick={handleUpdate}>수정</button>
-          <button onClick={() => setIsEditing(false)}>취소</button>
-        </>
+        <div
+          className="TodoListItem"
+          // 순서10, 실제 아이템의 왼쪽 사이드 바에 색상으로 표기하기.
+          style={{ borderLeft: `4px solid ${priorityColor[priority]}` }}
+        >
+          {/* 수정 입력 영역 변경 */}
+          <div className="checkbox editing">
+            <input
+              className="edit-input"
+              value={editText}
+              onChange={(e) => setEditText(e.target.value)}
+            />
+
+            <div className="update save" onClick={handleUpdate}>
+              <AiFillEdit />
+            </div>
+
+            <div className="remove cancel" onClick={() => setIsEditing(false)}>
+              <MdOutlineCancel />
+            </div>
+          </div>
+        </div>
       ) : (
         // 수정 중이 아닐 때
         <div
@@ -78,6 +93,7 @@ const TodoListItem = ({ todo, onRemove, onToggle, onUpdate }) => {
             {checked ? <MdCheckBox /> : <MdCheckBoxOutlineBlank />}
             <div className="text">{text}</div>
           </div>
+
           {/* 수정 버튼: 클릭 시 수정 */}
           <div className="update" onClick={() => setIsEditing(true)}>
             <AiFillEdit />
