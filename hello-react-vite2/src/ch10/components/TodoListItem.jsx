@@ -8,8 +8,20 @@ import { AiFillDelete } from 'react-icons/ai';
 import cn from 'classnames';
 import './TodoListItem.scss';
 
+// 순서8, priority 색상 바 추가.
+// - `TodoListItem`에서 우선순위에 따라 왼쪽에 색상 바(border-left) 표시
+//     - high: 빨간색 `#ff6b6b`
+//     - medium: 노란색 `#fcc419`
+//     - low: 초록색 `#51cf66`
+const priorityColor = {
+  high: `#ff6b6b`,
+  medium: `#fcc419`,
+  low: `#51cf66`,
+};
+
 const TodoListItem = ({ todo, onRemove, onToggle }) => {
-  const { id, text, checked } = todo; // 구조 분해 할당
+  // 순서9, todo에서, priority 값을 사용하기 쉽게 꺼내 놓고
+  const { id, text, checked, priority } = todo; // 구조 분해 할당
 
   // 삭제 전 confirm 다이얼로그 표시,
   const handleRemove = () => {
@@ -19,7 +31,11 @@ const TodoListItem = ({ todo, onRemove, onToggle }) => {
   };
 
   return (
-    <div className="TodoListItem">
+    <div
+      className="TodoListItem"
+      // 순서10, 실제 아이템의 왼쪽 사이드 바에 색상으로 표기하기.
+      style={{ borderLeft: `4px solid ${priorityColor[priority]}` }}
+    >
       {/* 체크박스 영역: 클릭 시 토글 */}
       <div
         className={cn('checkbox', { checked })} // checked=true면 'checkbox checked'

@@ -6,10 +6,21 @@ import TodoList from './components/TodoList';
 
 const App = () => {
   // ── 상태 선언 ──────────────────────────────────────────
+  // 순서 11, 기존의 배열 값에도, priority 필드 추가.
   const [todos, setTodos] = useState([
-    { id: 1, text: '리액트의 기초 알아보기', checked: true },
-    { id: 2, text: '컴포넌트 스타일링해 보기', checked: true },
-    { id: 3, text: '일정 관리 앱 만들어 보기', checked: false },
+    { id: 1, text: '리액트의 기초 알아보기', checked: true, priority: 'high' },
+    {
+      id: 2,
+      text: '컴포넌트 스타일링해 보기',
+      checked: true,
+      priority: 'medium',
+    },
+    {
+      id: 3,
+      text: '일정 관리 앱 만들어 보기',
+      checked: false,
+      priority: 'low',
+    },
   ]);
 
   // 다음 id 추적 (useState 아닌 useRef 사용 → 리렌더링 불필요)
@@ -24,22 +35,22 @@ const App = () => {
 
   // ── 할 일 추가 ─────────────────────────────────────────
   // concat: 기존 배열은 그대로 두고 새 배열을 반환 (불변성 유지)
-  const onInsert = useCallback((text) => {
-    // 빈문자열이면, onInsert 함수 기능을 나간다.
-    if (!text.trim()) {
-      alert('빈 문자열은 입력 불가입니다.');
-      return;
-    }
+  // const onInsert = useCallback((text) => {
+  //   // 빈문자열이면, onInsert 함수 기능을 나간다.
+  //   if (!text.trim()) {
+  //     alert('빈 문자열은 입력 불가입니다.');
+  //     return;
+  //   }
 
-    const todo = {
-      id: nextId.current,
-      text,
-      checked: false,
-    };
-    // 함수형 업데이트: 항상 최신 todos 기준으로 업데이트
-    setTodos((todos) => todos.concat(todo));
-    nextId.current += 1; // 다음 id 증가
-  }, []); // 의존성 없음 → 마운트 시 1회만 생성
+  //   const todo = {
+  //     id: nextId.current,
+  //     text,
+  //     checked: false,
+  //   };
+  //   // 함수형 업데이트: 항상 최신 todos 기준으로 업데이트
+  //   setTodos((todos) => todos.concat(todo));
+  //   nextId.current += 1; // 다음 id 증가
+  // }, []); // 의존성 없음 → 마운트 시 1회만 생성
 
   // ── 할 일 삭제 ─────────────────────────────────────────
   // filter: id가 다른 것만 남기면 해당 id 항목이 제거됨
@@ -58,6 +69,27 @@ const App = () => {
       ),
     );
   }, []);
+
+  // 실습6,  onInsert 기능에 priority 파라미터 추가
+  // 순서1,
+  const onInsert = useCallback((text, priority = 'medium') => {
+    // 빈문자열이면, onInsert 함수 기능을 나간다.
+    if (!text.trim()) {
+      alert('빈 문자열은 입력 불가입니다.');
+      return;
+    }
+
+    const todo = {
+      id: nextId.current,
+      text,
+      checked: false,
+      // 순서2, 추가
+      priority,
+    };
+    // 함수형 업데이트: 항상 최신 todos 기준으로 업데이트
+    setTodos((todos) => todos.concat(todo));
+    nextId.current += 1; // 다음 id 증가
+  }, []); // 의존성 없음 → 마운트 시 1회만 생성
 
   // ── 렌더링 ────────────────────────────────────────────
   // 실습5,  작업2, props 로 전달. 전체갯수, 체크된 갯수
