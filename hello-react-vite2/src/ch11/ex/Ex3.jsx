@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { memo } from 'react';
 
 import { useState } from 'react';
 
 // TODO: 이 컴포넌트에 memo를 적용하세요
-function Child({ name, score }) {
+// memo가 부모로부터 받는 props 비교만 최적화합니다.
+// 그래서, 컴포넌트 자신의 state가 바뀌면 리렌더합니다.
+
+const Child = memo(function Child({ name, score }) {
   console.log('Child 렌더 — name:', name, 'score:', score);
   return (
     <div
@@ -18,7 +21,7 @@ function Child({ name, score }) {
       <p>점수: {score}</p>
     </div>
   );
-}
+});
 
 const Ex3 = () => {
   const [parentCount, setParentCount] = useState(0);

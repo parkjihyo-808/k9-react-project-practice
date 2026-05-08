@@ -6,6 +6,7 @@ import TodoList from './components/TodoList';
 import Ex1 from './ex/Ex1';
 import Ex2 from './ex/Ex2';
 import Ex3 from './ex/Ex3';
+import Ex4 from './ex/Ex4';
 
 const App = () => {
   // ── 상태 선언 ──────────────────────────────────────────
@@ -68,6 +69,8 @@ const App = () => {
       <Ex2></Ex2>
       <h2>실습3 풀이</h2>
       <Ex3></Ex3>
+      <h2>실습4 풀이</h2>
+      <Ex4></Ex4>
       <TodoTemplate>
         <TodoInsert onInsert={onInsert} />
         <TodoList todos={todos} onRemove={onRemove} onToggle={onToggle} />
