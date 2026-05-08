@@ -48,9 +48,11 @@ const Ex3 = () => {
     (id) => {
       // 문제3) , immer 라이브러리 교체,
       //   setData({ ...data, array: data.array.filter((info) => info.id !== id) });
-      setData(data, (draft) => {
-        draft.array = draft.array.filter((info) => info.id != id);
-      });
+      setData(
+        produce(data, (draft) => {
+          draft.array = draft.array.filter((info) => info.id != id);
+        }),
+      );
     },
     [data],
   );
