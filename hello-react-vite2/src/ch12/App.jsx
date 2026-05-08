@@ -4,6 +4,7 @@ import ImmerTest from './ImmerTest';
 import Ex2 from './ex/Ex2';
 import ImmerTest2 from './ImmerTest2';
 import Ex3 from './ex/Ex3';
+import FinalEx from './ex/FinalEx';
 
 const App = () => {
   return (
@@ -19,6 +20,8 @@ const App = () => {
       <ImmerTest2></ImmerTest2>
       <h2> 실습3</h2>
       <Ex3></Ex3>
+      <h2> Final 실습</h2>
+      <FinalEx></FinalEx>
     </div>
   );
 };
