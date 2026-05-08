@@ -26,10 +26,10 @@ const Ex5 = () => {
       prevTodos.map((todo) =>
         //  prevTodos.map
         // =>
-        // [
-        //     { id: 1, text: '리액트 공부하기', checked: false }, // 첫 요소의 객체가 저장된 기존 메모리 주소 : 0x500
-        //     { id: 2, text: '운동하기', checked: false }, // 두번째 요소의 객체가 저장된 기존 메모리 주소 : 0x600
-        //     { id: 3, text: '독서하기', checked: false }, // 세번째 요소의 객체가 저장된 기존 메모리 주소 : 0x700
+        // [ 배열도 (새배열, 새참조)
+        //     { id: 1, text: '리액트 공부하기', checked: false }, // 첫 요소의 객체가 저장된 기존 메모리 주소 : 0x500 (새참조)
+        //     { id: 2, text: '운동하기', checked: false }, // 두번째 요소의 객체가 저장된 기존 메모리 주소 : 0x200 (그대로)
+        //     { id: 3, text: '독서하기', checked: false }, // 세번째 요소의 객체가 저장된 기존 메모리 주소 : 0x300 (그대로)
         //   ])
         todo.id === 1 ? { ...todo, checked: !todo.checked } : todo,
       ),
