@@ -64,6 +64,26 @@ const Ex5 = () => {
         >
           useNavigate 테스트
         </NavLink>
+        <NavLink
+          to="/myPage"
+          //   style={({ isActive }) => (isActive ? activeStyle : navStyle)}
+          style={({ isActive }) => ({
+            color: isActive ? 'green' : 'black',
+            fontWeight: isActive ? 'bold' : 'normal',
+          })}
+        >
+          임시 myPage
+        </NavLink>
+        <NavLink
+          to="/login"
+          //   style={({ isActive }) => (isActive ? activeStyle : navStyle)}
+          style={({ isActive }) => ({
+            color: isActive ? 'green' : 'black',
+            fontWeight: isActive ? 'bold' : 'normal',
+          })}
+        >
+          💛로그인
+        </NavLink>
         {/* 순서3, 화면에 표시하기.  */}
         <span>⏲️: {time}</span>
       </header>
