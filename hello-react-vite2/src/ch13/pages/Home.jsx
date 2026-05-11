@@ -12,6 +12,9 @@ const Home = () => {
       <li>
         <Link to="/profiles/hong">홍길동 프로필</Link>
       </li>
+      <li>
+        <Link to="/profiles2/sejong">세종대왕 프로필</Link>
+      </li>
     </div>
   );
 };

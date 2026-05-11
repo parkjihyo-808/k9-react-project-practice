@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Ex1 from './ex/Ex1';
 import Profile from './pages/Profile';
+import Ex2 from './ex/Ex2';
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Ex1 />} />
         <Route path="/profiles/:username" element={<Profile />} />
+        <Route path="/profiles2/:username" element={<Ex2 />} />
       </Routes>
     </div>
   );
