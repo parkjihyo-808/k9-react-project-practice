@@ -75,6 +75,16 @@ const Ex5 = () => {
           임시 myPage
         </NavLink>
         <NavLink
+          to="/myPage2"
+          //   style={({ isActive }) => (isActive ? activeStyle : navStyle)}
+          style={({ isActive }) => ({
+            color: isActive ? 'green' : 'black',
+            fontWeight: isActive ? 'bold' : 'normal',
+          })}
+        >
+          Ex6-myPage
+        </NavLink>
+        <NavLink
           to="/login"
           //   style={({ isActive }) => (isActive ? activeStyle : navStyle)}
           style={({ isActive }) => ({
