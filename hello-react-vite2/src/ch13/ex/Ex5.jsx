@@ -46,14 +46,21 @@ const Ex5 = () => {
         </NavLink>
         <NavLink
           to="/profiles/lsy"
-          style={({ isActive }) => (isActive ? activeStyle : navStyle)}
+          className={({ isActive }) =>
+            isActive ? 'active-link' : 'normal-link'
+          }
+          //   style={({ isActive }) => (isActive ? activeStyle : navStyle)}
         >
           프로필
         </NavLink>
 
         <NavLink
           to="/useNavigate"
-          style={({ isActive }) => (isActive ? activeStyle : navStyle)}
+          //   style={({ isActive }) => (isActive ? activeStyle : navStyle)}
+          style={({ isActive }) => ({
+            color: isActive ? 'green' : 'black',
+            fontWeight: isActive ? 'bold' : 'normal',
+          })}
         >
           useNavigate 테스트
         </NavLink>

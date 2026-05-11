@@ -12,6 +12,7 @@ import Ex4 from './ex/Ex4';
 import Layout from './pages/Layout';
 import Ex5 from './ex/Ex5';
 import UseNavigate from './pages/UseNavigate';
+import NotFound from './pages/NotFound';
 
 const App = () => {
   return (
@@ -41,6 +42,9 @@ const App = () => {
             <Route path=":id" element={<Article />} />
           </Route>
           <Route path="/useNavigate" element={<UseNavigate />} />
+          {/* App.jsx Routes 마지막에 추가 */}
+          <Route path="*" element={<NotFound />} />{' '}
+          {/* * = 어떤 경로도 매칭 안될 때 */}
         </Route>
       </Routes>
     </div>
