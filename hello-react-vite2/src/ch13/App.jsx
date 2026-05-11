@@ -6,6 +6,8 @@ import Ex1 from './ex/Ex1';
 import Profile from './pages/Profile';
 import Ex2 from './ex/Ex2';
 import Ex3 from './ex/Ex3';
+import Articles from './pages/Articles';
+import Article from './pages/Article';
 
 const App = () => {
   return (
@@ -16,7 +18,8 @@ const App = () => {
       <nav>
         <Link to="/">홈</Link> | <Link to="/about">소개</Link>|{' '}
         <Link to="/contact">연락처-Ex1</Link> |{' '}
-        <Link to="/about2">소개-Ex3</Link>
+        <Link to="/about2">소개-Ex3</Link> |{' '}
+        <Link to="/articles">Articles</Link>
       </nav>
       <hr />
       {/* 라우트 설정 */}
@@ -27,6 +30,9 @@ const App = () => {
         <Route path="/profiles/:username" element={<Profile />} />
         <Route path="/profiles2/:username" element={<Ex2 />} />
         <Route path="/about2" element={<Ex3 />} />
+        <Route path="/articles" element={<Articles />}>
+          <Route path=":id" element={<Article />} />
+        </Route>
       </Routes>
     </div>
   );
