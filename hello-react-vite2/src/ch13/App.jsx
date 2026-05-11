@@ -2,6 +2,8 @@ import React from 'react';
 import { Link, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';
+import Ex1 from './ex/Ex1';
+import Profile from './pages/Profile';
 
 const App = () => {
   return (
@@ -10,13 +12,16 @@ const App = () => {
       <h2>"react-router-dom": "^7.15.0"</h2>
       {/* 내비게이션 메뉴 */}
       <nav>
-        <Link to="/">홈</Link> | <Link to="/about">소개</Link>
+        <Link to="/">홈</Link> | <Link to="/about">소개</Link>|{' '}
+        <Link to="/contact">연락처-Ex1</Link>
       </nav>
       <hr />
       {/* 라우트 설정 */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Ex1 />} />
+        <Route path="/profiles/:username" element={<Profile />} />
       </Routes>
     </div>
   );
