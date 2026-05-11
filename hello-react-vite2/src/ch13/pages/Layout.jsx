@@ -21,7 +21,7 @@ const Layout = () => (
         소개
       </NavLink>
       <NavLink
-        to="/profiles/velopert"
+        to="/profiles/lsy"
         style={({ isActive }) => (isActive ? activeStyle : navStyle)}
       >
         프로필
@@ -42,7 +42,7 @@ const Layout = () => (
         textAlign: 'center',
       }}
     >
-      © 2024 React Router Tutorial
+      © 2026 React Router Tutorial K401
     </footer>
   </div>
 );

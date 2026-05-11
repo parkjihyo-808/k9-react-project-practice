@@ -10,6 +10,7 @@ import Articles from './pages/Articles';
 import Article from './pages/Article';
 import Ex4 from './ex/Ex4';
 import Layout from './pages/Layout';
+import Ex5 from './ex/Ex5';
 
 const App = () => {
   return (
@@ -27,7 +28,7 @@ const App = () => {
       {/* 라우트 설정 */}
       <Routes>
         {/* Layout 안에 묶인 라우트들은 Layout을 공유 */}
-        <Route element={<Layout />}>
+        <Route element={<Ex5 />}>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Ex1 />} />
