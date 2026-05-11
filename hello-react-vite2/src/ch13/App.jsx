@@ -8,6 +8,7 @@ import Ex2 from './ex/Ex2';
 import Ex3 from './ex/Ex3';
 import Articles from './pages/Articles';
 import Article from './pages/Article';
+import Ex4 from './ex/Ex4';
 
 const App = () => {
   return (
@@ -31,6 +32,7 @@ const App = () => {
         <Route path="/profiles2/:username" element={<Ex2 />} />
         <Route path="/about2" element={<Ex3 />} />
         <Route path="/articles" element={<Articles />}>
+          <Route index element={<Ex4 />} /> {/*기본 자식 컴포넌트로 활용 */}
           <Route path=":id" element={<Article />} />
         </Route>
       </Routes>
