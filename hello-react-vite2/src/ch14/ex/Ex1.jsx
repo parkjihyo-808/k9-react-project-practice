@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
 
-const DummyJson = () => {
+const Ex1 = () => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -12,7 +12,7 @@ const DummyJson = () => {
     try {
       // dummyjson.com: 무료 Mock API
       const response = await axios.get(
-        'https://dummyjson.com/users?limit=1&skip=0',
+        'https://jsonplaceholder.typicode.com/posts/1',
       );
       setData(response.data);
     } catch (e) {
@@ -42,4 +42,4 @@ const DummyJson = () => {
   );
 };
 
-export default DummyJson;
+export default Ex1;
