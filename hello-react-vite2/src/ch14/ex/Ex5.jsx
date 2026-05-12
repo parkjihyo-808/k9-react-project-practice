@@ -7,6 +7,20 @@ import Ex2 from '../ex/Ex2';
 import NewsList from './NewsList';
 import Categories from './Categories';
 
+// ### 📝 실습 문제 5
+
+// > 카테고리 버튼을 클릭하면 해당 카테고리 이름이
+// 상단 제목에 표시되도록 수정하세요.
+// 예: `"📰 비즈니스 뉴스"`, `"📰 전체보기 뉴스"`
+// >
+//   { name: 'all', text: '전체보기' },
+//   { name: 'business', text: '비즈니스' },
+//   { name: 'entertainment', text: '엔터테인먼트' },
+//   { name: 'health', text: '건강' },
+//   { name: 'science', text: '과학' },
+//   { name: 'sports', text: '스포츠' },
+//   { name: 'technology', text: '기술' },
+
 // 실습 5, 순서1, 상단에 이름으로 표기할 내용을 객체 형태로 저장.
 const categoryNames = {
   all: '전체보기',
@@ -18,7 +32,7 @@ const categoryNames = {
   technology: '기술',
 };
 
-const NewsPage = () => {
+const Ex5 = () => {
   // URL: /technology → params.category = 'technology'
   // URL: /           → params.category = undefined
   const { category } = useParams();
@@ -53,4 +67,4 @@ const NewsPage = () => {
   );
 };
 
-export default NewsPage;
+export default Ex5;
