@@ -16,6 +16,7 @@ const categoryNames = {
   sports: '스포츠',
   technology: '기술',
   busanFood: '부산 맛집 정보 서비스',
+  busanTour: '부산 관광 정보 서비스',
 };
 
 const NewsPage = () => {
