@@ -29,7 +29,7 @@ const NewsPage = () => {
   const categoryText = categoryNames[currentCategory] || '전체보기';
 
   // 파이널 실습, 페이지 번호, 상태변수로 지정,
-  const [page, setPage] = useState(1);
+  // const [page, setPage] = useState(1);
 
   return (
     <>

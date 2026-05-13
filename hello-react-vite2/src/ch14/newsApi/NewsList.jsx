@@ -57,12 +57,15 @@ const NewsList = ({ category = 'all' }) => {
 
   // 기존의 뉴스 기사 데이터 내용이고, 카테고리에 따라서, 내용을 분기하기.
   // const { articles } = resolved.data;
+  // ?.
+  // getFoodKr?. , 서버로 호출된 값에 접근시, 데이터가 없을 경우, 에러를 발생시키는 것이 아니라,
+  // undefined  또는 null 이어도, 에러를 발생시키지 않는다.
   const data =
     category === 'busanFood'
-      ? resolved.data.getFoodKr.item || []
+      ? resolved.data.getFoodKr?.item || []
       : category === 'busanTour'
-        ? resolved.data.getAttractionKr.item || []
-        : resolved.data.articles;
+        ? resolved.data.getAttractionKr?.item || []
+        : resolved.data.articles || [];
 
   // ### 📝 실습 문제 4
 
