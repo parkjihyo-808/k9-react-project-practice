@@ -26,7 +26,7 @@ const Ex6 = () => {
       <h1>😄사용자 목록</h1>
       <ul>
         {users.map((user) => (
-          <li>
+          <li key={user.id}>
             Name : {user.name} - Email : 📧 {user.email}
           </li>
         ))}
