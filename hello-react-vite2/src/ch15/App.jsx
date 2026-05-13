@@ -1,6 +1,8 @@
 import ColorBox from './components/ColorBox';
 import ColorBox2 from './components/ColorBox2';
+import ColorBox3 from './components/ColorBox3';
 import SelectColors from './components/SelectColors';
+import SelectColors2 from './components/SelectColors2';
 import ColorContext from './contexts/ColorContext';
 import { ColorProvider } from './contexts/ColorContext2';
 
@@ -31,6 +33,10 @@ const App = () => (
         <h1>동적 Context 예제 🎨</h1>
         <SelectColors />
         <ColorBox2 />
+        <h2>useContext를 이용한 ColorBox3</h2>
+        <ColorBox3 />
+        <h2>useContext를 이용한 SelectColors2</h2>
+        <SelectColors2 />
       </div>
     </ColorProvider>
   </div>
