@@ -17,6 +17,9 @@ const App = () => (
     <ColorContext.Provider value={{ color: 'blue' }}>
       <ColorBox />
     </ColorContext.Provider>
+
+    <h2>Ex1 실습1</h2>
+    <p>ColorBox 컴포넌트에 적용해서, 박스 아래에 색깔 표기함.</p>
   </div>
 );
 
