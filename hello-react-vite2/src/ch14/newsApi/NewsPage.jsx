@@ -15,6 +15,7 @@ const categoryNames = {
   science: '과학',
   sports: '스포츠',
   technology: '기술',
+  busanFood: '부산 맛집 정보 서비스',
 };
 
 const NewsPage = () => {
@@ -46,22 +47,22 @@ const NewsPage = () => {
         <NewsList category="all" />
       </div> */}
       {/* 실습 5, 순서3, 화면에 출력해보기 */}
-      <h2>실습6, 화면 출력</h2>
-      <Ex6></Ex6>
+      {/* <h2>실습6, 화면 출력</h2>
+      <Ex6></Ex6> */}
 
-      <h2>파이널 실습, 화면 출력</h2>
+      {/* <h2>파이널 실습, 화면 출력</h2> */}
       {/* 페이지 번호 임의로 3개만 출력 */}
-      <div>
+      {/* <div>
         {[1, 2, 3].map((p) => (
           <button key={p} onClick={() => setPage(p)}>
             {p}페이지
           </button>
         ))}
       </div>
-      <FinalEx page={page}></FinalEx>
+      <FinalEx page={page}></FinalEx> */}
 
       <h1 style={{ textAlign: 'center', marginTop: '20px' }}>
-        📰 {categoryText} 뉴스
+        📰 {categoryText}
       </h1>
       <Categories />
       <NewsList category={currentCategory} />
